@@ -1,23 +1,7 @@
 {
 	"pages": [ 
     //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-    {
-			"path": "compontents/home/home",
-			"style": {
-				"navigationBarTitleText": "首页",
-				"app-plus": {
-					"bounce": "vertical",
-					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
-					}
-				}
-			}
-    },
+    
     {
 			"path": "compontents/timemachine/timemachine",
 			"style": {
@@ -34,7 +18,24 @@
 					}
 				}
 			}
+    },{
+			"path": "compontents/home/home",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"app-plus": {
+					"bounce": "vertical",
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
     },
+    
     {
 			"path": "compontents/my/my",
 			"style": {
@@ -94,11 +95,4 @@
 			}
 		]
   }
-    
-	// "globalStyle": {
-	// 	"navigationBarTextStyle": "black",
-	// 	"navigationBarTitleText": "uni-app",
-	// 	"navigationBarBackgroundColor": "#F8F8F8",
-	// 	"backgroundColor": "#F8F8F8"
-  // },
 }

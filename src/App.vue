@@ -20,5 +20,6 @@ export default {
 </script>
 
 <style>
+@import './common/style/common.css';
 /*每个页面公共css */
 </style>
