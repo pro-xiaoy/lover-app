@@ -1,7 +1,23 @@
 {
 	"pages": [ 
     //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-    
+    {
+			"path": "compontents/my/my",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"app-plus": {
+					"bounce": "vertical",
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
+    },
     {
 			"path": "compontents/timemachine/timemachine",
 			"style": {
@@ -36,23 +52,7 @@
 			}
     },
     
-    {
-			"path": "compontents/my/my",
-			"style": {
-				"navigationBarTitleText": "我的",
-				"app-plus": {
-					"bounce": "vertical",
-					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
-					}
-				}
-			}
-    },
+    
     {
 			"path": "compontents/demoone/demoone",
 			"style": {
