@@ -1,12 +1,11 @@
 
 <template>
   <div class>
-    mys
+    cnm
   </div>
 </template> 
 
 <script>
-import { mapState } from "vuex";
 
 export default {
   data() {
@@ -14,11 +13,7 @@ export default {
   },
   mounted() {
     console.log(1111);
-    console.log(this.UserInfo);
   },
-    computed: mapState({
-      UserInfo: state => state.UserInfo,
-    })
 };
 </script>
 <style lang="sass">

@@ -1,24 +1,20 @@
 <script>
 export default {
   onLaunch: function() {
-    uni.getUserInfo({
-        success: (res) => {
-          var userInfo = res.userInfo
-          if (userInfo) this.$store.commit('SET_USERINFO', userInfo)
-        
-          // state.userInfo = Object.assign({}, state.userInfo, userInfo)
-          // var nickName = userInfo.nickName
-          // var avatarUrl = userInfo.avatarUrl
-          // var gender = userInfo.gender //性别 0：未知、1：男、2：女
-          // var province = userInfo.province
-          // var city = userInfo.city
-          // var country = userInfo.country
-        }
-      })
+  //  当uni-app 初始化完成时触发（全局只触发一次）
+    const userInfo = uni.getStorageSync("userInfo");
+    if (userInfo) {
+      this.$store.commit("SET_USERINFO", userInfo);
+    }
+    this.getInfo();
+
   },
-  onShow: function() {
-  },
-  onHide: function() {
+  onShow: function() {},
+  onHide: function() {},
+  methods: {
+    getInfo() {
+      this.$store.dispatch('wxlogin')
+    }
   }
 };
 </script>
