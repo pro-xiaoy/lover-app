@@ -1,7 +1,25 @@
 {
 	"pages": [ 
-    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
+			"path": "compontents/home/home",
+			"style": {
+        "navigationBarTitleText": "首页",
+        "disableScroll": true,
+        "navigationStyle": "custom", 
+        "transparentTitle": "always",
+				"app-plus": {
+					"bounce": "vertical",
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
+    },{
 			"path": "compontents/my/my",
 			"style": {
 				"navigationBarTitleText": "我的",
@@ -34,25 +52,7 @@
 					}
 				}
 			}
-    },{
-			"path": "compontents/home/home",
-			"style": {
-				"navigationBarTitleText": "首页",
-				"app-plus": {
-					"bounce": "vertical",
-					"titleNView": {
-						"buttons": [{
-							"text": "\ue534",
-							"fontSrc": "/static/uni.ttf",
-							"fontSize": "22px",
-							"color": "#FFFFFF"
-						}]
-					}
-				}
-			}
     },
-    
-    
     {
 			"path": "compontents/demoone/demoone",
 			"style": {
@@ -75,7 +75,8 @@
 		"color": "#7A7E83",
 		"selectedColor": "#ff0000",
 		"borderStyle": "black",
-		"backgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "transparentTitle": "always",
 		"list": [{
 				"pagePath": "compontents/home/home",
 				"iconPath": "static/home.png",
