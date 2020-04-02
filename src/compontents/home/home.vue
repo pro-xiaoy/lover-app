@@ -22,12 +22,12 @@
       <div class="home_foot_item" @click="pickinfo">
         <img class="home_foot_item-img" src="@/static/rili.png" alt />
         <p class="home_foot_item-title">纪念日</p>
-        <p class="home_foot_item-daily">估计30天</p>
+        <p class="home_foot_item-daily">5个</p>
       </div>
       <div class="home_foot_item">
         <img class="home_foot_item-img" src="@/static/jinianri.png" alt />
-        <p class="home_foot_item-title">纪念日</p>
-        <p class="home_foot_item-daily">估计30天</p>
+        <p class="home_foot_item-title">私密日记</p>
+        <p class="home_foot_item-daily">3条</p>
         <!-- 私密日记 -->
       </div>
       <div class="home_foot_item" @click="hreflink">
