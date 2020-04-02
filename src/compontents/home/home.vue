@@ -3,33 +3,36 @@
   <div class="home_bg">
     <div class="home_dayils">
       <div class="home_dayils-item">
-        <img src="@/static/archer1.png" alt />
+        <img :src="userInfo.avatarUrl" alt />
       </div>
-      <div class="home_dayils-item-text">
+      <div class="home_dayils-item-text" v-show="daily">
         在一起已经
         <p>
-          <span class="home_dayils-item-text_b">385</span>天
+          <span class="home_dayils-item-text_b">{{daily}}</span>天
         </p>
       </div>
+      <div class="home_dayils-item-text" v-show="!daily">
+        <view class="home_dayils-item-btn" @click="invite">邀请宝宝</view>
+      </div>
       <div class="home_dayils-item">
-        <img src="@/static/sabar1.png" alt />
+        <img :src="loverinfo.avatarUrl?loverinfo.loverinfo:defalueAvalr" alt />
       </div>
     </div>
     <div class="home_foot_items">
-      <div class="home_foot_item">
-        <img class="home_foot_item-img" src="@/static/rili.png" alt="">
+      <div class="home_foot_item" @click="pickinfo">
+        <img class="home_foot_item-img" src="@/static/rili.png" alt />
         <p class="home_foot_item-title">纪念日</p>
         <p class="home_foot_item-daily">估计30天</p>
       </div>
       <div class="home_foot_item">
-        <img class="home_foot_item-img" src="@/static/jinianri.png" alt="">
+        <img class="home_foot_item-img" src="@/static/jinianri.png" alt />
         <p class="home_foot_item-title">纪念日</p>
         <p class="home_foot_item-daily">估计30天</p>
         <!-- 私密日记 -->
       </div>
-      <div class="home_foot_item">
-        <img class="home_foot_item-img" src="@/static/yunzhushou.png" alt="">
-        <p class="home_foot_item-title">纪念日</p>
+      <div class="home_foot_item" @click="hreflink">
+        <img class="home_foot_item-img" src="@/static/yunzhushou.png" alt />
+        <p class="home_foot_item-title">姨妈助手</p>
         <p class="home_foot_item-daily">估计30天</p>
         <!-- 姨妈助手 -->
       </div>
@@ -39,25 +42,62 @@
 
 <script>
 import { mapState } from "vuex";
-
+import defaultimg from "@/static/love_active.png";
 export default {
   data() {
-    return {};
+    return {
+      userInfo: {},
+      loverinfo: {},
+      defalueAvalr: defaultimg,
+      daily: undefined
+    };
   },
-  onLaunch() {
-    console.log("2222");
+  onLoad() {
+    // app-id  wxfe5cf64326da62d5
+
+    uni.getUserInfo({
+      lang: "en",
+      success: res => {
+        console.log("res+++", res.userInfo);
+        this.userInfo = res.userInfo;
+      }
+    });
   },
-  mounted() {
-    console.log(this.UserInfo);
-  },
+  mounted() {},
   computed: mapState({
     UserInfo: state => state.UserInfo
   }),
   methods: {
+    // 没有发布上所以这个分享功能还不可以使用贼恶心
+    invite() {
+      uni.share({
+        provider: "weixin",
+        scene: "WXSceneSession",
+        type: 1,
+        summary: "我正在使用HBuilderX开发uni-app，赶紧跟我一起来体验！",
+        success: function(res) {
+          console.log("success:" + JSON.stringify(res));
+        },
+        fail: function(err) {
+          console.log("fail:" + JSON.stringify(err));
+        }
+      });
+    },
     hreflink() {
-      console.log("1");
-      uni.navigateTo({
-        url: "/compontents/demoone/demoone"
+      uni.makePhoneCall({
+        phoneNumber: "17621643117" //仅为示例
+      });
+    },
+
+    pickinfo() {
+      uni.navigateTo({        
+        url: '../remdaily/remdaily',
+        success: (res) => {
+          console.log('1', res)
+        },
+        fail: (err) => {
+          console.log('ettt', err)
+        }        
       });
     }
   }
@@ -102,9 +142,17 @@ export default {
     float: left;
     overflow: hidden;
     border: 1rpx solid #479eed;
+    background-color: #fff;
     img {
       width: 100%;
+      height: 100%;
     }
+  }
+  .home_dayils-item-btn {
+    padding: 10rpx 20rpx;
+    border-radius: 20rpx;
+    color: #fff;
+    background-color: rgba(83, 137, 199, 1);
   }
   .home_dayils-item-text {
     text-align: center;

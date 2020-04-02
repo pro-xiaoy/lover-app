@@ -69,6 +69,40 @@
 					}
 				}
 			}
+    },
+    {
+			"path": "compontents/timerpick/timerpick",
+			"style": {
+				"navigationBarTitleText": "时间选择器",
+				"app-plus": {
+					"bounce": "vertical",
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
+    },
+    {
+			"path": "compontents/remdaily/remdaily",
+			"style": {
+				"navigationBarTitleText": "纪念日",
+				"app-plus": {
+					"bounce": "vertical",
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
 		}
   ],
   "tabBar": {
@@ -95,5 +129,20 @@
 				"text": "我的"
 			}
 		]
-  }
+  },
+  "condition": { 
+    "current": 1,
+    "list": [{
+            "name": "cngdj", 
+            "path": "compontents/timerpick/timerpick",
+            "query": "interval=4000&autoplay=false" 
+        },
+        {
+            "name": "test",
+            "path": "compontents/remdaily/remdaily"
+        }
+        
+    ]
+}
+  
 }

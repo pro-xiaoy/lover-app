@@ -21,5 +21,7 @@ export default {
 
 <style>
 @import './common/style/common.css';
+@import './common/style/uni.css';
+@import './common/style/animate.min.css'
 /*每个页面公共css */
 </style>
